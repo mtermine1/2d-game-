@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3egglmhj4nln"]
+
+[ext_resource type="Texture2D" uid="uid://c56h41cpkq0pp" path="res://seal-beach-dune-island-near-helgoland.jpg" id="1_j1l11"]
+
+[node name="SealBeachDuneIslandNearHelgoland" type="Sprite2D"]
+position = Vector2(600.00006, 319.00006)
+scale = Vector2(0.16947882, 0.16947882)
+texture = ExtResource("1_j1l11")
