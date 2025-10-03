@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://bookavpodohnk"]
+[gd_scene load_steps=3 format=3 uid="uid://bookavpodohnk"]
 
-[node name="Junayed\'sScene" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="1_bl0vr"]
+[ext_resource type="Script" uid="uid://d2vubskat1y0b" path="res://sprite_2d.gd" id="2_wq76p"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bl0vr")
+script = ExtResource("2_wq76p")
