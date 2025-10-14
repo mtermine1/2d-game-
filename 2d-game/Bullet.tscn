@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://b3egglmhj4nln"]
+
+[ext_resource type="Texture2D" uid="uid://dg7s8legw07ui" path="res://bullet animation/Untitled_Artwork-1 2.png" id="1_0cm21"]
+[ext_resource type="Texture2D" uid="uid://0k8inldj7nqc" path="res://bullet animation/Untitled_Artwork-2 2.png" id="2_r5mv2"]
+[ext_resource type="Texture2D" uid="uid://cpp7t6sv33u7e" path="res://bullet animation/Untitled_Artwork-3 2.png" id="3_cdep2"]
+[ext_resource type="Texture2D" uid="uid://3pyaj82txrhh" path="res://bullet animation/Untitled_Artwork-4 2.png" id="4_66t4k"]
+[ext_resource type="Texture2D" uid="uid://0c5wdjctxf3p" path="res://bullet animation/Untitled_Artwork-5 2.png" id="5_inkkk"]
+[ext_resource type="Texture2D" uid="uid://c6ffik5xhtoj8" path="res://bullet animation/Untitled_Artwork-6 2.png" id="6_3ugxo"]
+[ext_resource type="Texture2D" uid="uid://c6i8fe70cwidh" path="res://bullet animation/Untitled_Artwork-7 2.png" id="7_b7nby"]
+[ext_resource type="Texture2D" uid="uid://be68oyipfe3l4" path="res://bullet animation/Untitled_Artwork-8 2.png" id="8_lw2a6"]
+[ext_resource type="Texture2D" uid="uid://bljcqsqoqxrao" path="res://bullet animation/Untitled_Artwork-9 2.png" id="9_aajb6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ix8gh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0cm21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r5mv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cdep2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_66t4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_inkkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3ugxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b7nby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lw2a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aajb6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(286.0001, 289.00012)
+scale = Vector2(0.32553956, 0.32553956)
+sprite_frames = SubResource("SpriteFrames_ix8gh")
+frame_progress = 0.8605844
