@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5s3dhfey5o4o"]
+[gd_scene load_steps=5 format=3 uid="uid://dtvhjh22avv3t"]
 
 [ext_resource type="Texture2D" uid="uid://bq406q87v8a4q" path="res://free hallway/00033.png" id="1_hvxns"]
-[ext_resource type="Script" uid="uid://d4hylqiej4amo" path="res://placeholder_player.gd" id="2_be2y1"]
+[ext_resource type="Script" path="res://placeholder_player.gd" id="2_be2y1"]
 [ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="3_v888q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yysk"]

@@ -1,3 +1,71 @@
-[gd_scene load_steps=0 format=3 uid="uid://df6hxra2unncp"]
+[gd_scene load_steps=10 format=3 uid="uid://df6hxra2unncp"]
+
+[ext_resource type="Texture2D" uid="uid://c4l1atirwyd4p" path="res://grandmas-house.png" id="1_bvi55"]
+[ext_resource type="Script" uid="uid://d4hylqiej4amo" path="res://placeholder_player.gd" id="2_bm4pd"]
+[ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="3_uea4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mugc1"]
+size = Vector2(175, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm4pd"]
+size = Vector2(452, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uea4e"]
+size = Vector2(280, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr5o1"]
+size = Vector2(183.45935, 27.948555)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2oqnh"]
+size = Vector2(138.56042, 22.763062)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cccf5"]
+size = Vector2(131, 122)
 
 [node name="Grace\'s Scene" type="Node2D"]
+
+[node name="GrandmasHouse" type="Sprite2D" parent="."]
+position = Vector2(1281.0001, 458)
+scale = Vector2(2.2237124, 2.222144)
+texture = ExtResource("1_bvi55")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GrandmasHouse"]
+position = Vector2(-12.141903, 6.7502346)
+
+[node name="Chair_armrest" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
+position = Vector2(-404, 4.002838)
+shape = SubResource("RectangleShape2D_mugc1")
+
+[node name="Couch_top" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
+position = Vector2(81, -108.07622)
+shape = SubResource("RectangleShape2D_bm4pd")
+
+[node name="Table" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
+position = Vector2(8.544261, 64.80228)
+scale = Vector2(1, 1.0007057)
+shape = SubResource("RectangleShape2D_uea4e")
+one_way_collision = true
+
+[node name="ottoman_bottom" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
+position = Vector2(-158.43575, 212.40297)
+scale = Vector2(0.9999999, 0.9999998)
+shape = SubResource("RectangleShape2D_gr5o1")
+
+[node name="ottoman_side" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
+position = Vector2(326.48108, 87.753105)
+scale = Vector2(0.9999999, 1.0007057)
+shape = SubResource("RectangleShape2D_2oqnh")
+
+[node name="Placeholder Player2" type="CharacterBody2D" parent="."]
+position = Vector2(225, 361)
+script = ExtResource("2_bm4pd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Placeholder Player2"]
+texture = ExtResource("3_uea4e")
+
+[node name="Camera2D" type="Camera2D" parent="Placeholder Player2"]
+position = Vector2(440, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder Player2"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_cccf5")
