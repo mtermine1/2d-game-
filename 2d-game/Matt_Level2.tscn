@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5s3dhfey5o4o"]
+
+[ext_resource type="Texture2D" uid="uid://bq406q87v8a4q" path="res://free hallway/00033.png" id="1_hvxns"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1530, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_hvxns")
+
+[node name="Placeholder Player" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Placeholder Player"]
