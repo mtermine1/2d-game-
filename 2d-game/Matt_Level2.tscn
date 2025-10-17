@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5s3dhfey5o4o"]
+[gd_scene load_steps=5 format=3 uid="uid://b5s3dhfey5o4o"]
 
 [ext_resource type="Texture2D" uid="uid://bq406q87v8a4q" path="res://free hallway/00033.png" id="1_hvxns"]
+[ext_resource type="Script" uid="uid://d4hylqiej4amo" path="res://placeholder_player.gd" id="2_be2y1"]
+[ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="3_v888q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yysk"]
+size = Vector2(131, 122)
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,6 +17,15 @@ repeat_times = 5
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture = ExtResource("1_hvxns")
 
-[node name="Placeholder Player" type="Node2D" parent="."]
+[node name="Placeholder Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_be2y1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Placeholder Player"]
+position = Vector2(72, 348)
+texture = ExtResource("3_v888q")
+
+[node name="Camera2D" type="Camera2D" parent="Placeholder Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder Player"]
+position = Vector2(73, 346)
+shape = SubResource("RectangleShape2D_2yysk")
