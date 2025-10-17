@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://vilfgtrb300s"]
+
+[ext_resource type="Texture2D" uid="uid://bnigbosbpwvxj" path="res://WALK GUY copy/2 copy 5.png" id="1_pfosc"]
+[ext_resource type="Texture2D" uid="uid://54dok0a5fpwh" path="res://WALK GUY copy/2 copy.png" id="2_13cwl"]
+[ext_resource type="Texture2D" uid="uid://ceivua6ekxx00" path="res://WALK GUY copy/2.png" id="3_njwu6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p73mb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pfosc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_13cwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_njwu6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(256, 336)
+sprite_frames = SubResource("SpriteFrames_p73mb")
+frame_progress = 0.7008626
