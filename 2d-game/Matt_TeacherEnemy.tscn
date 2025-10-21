@@ -1,5 +1,23 @@
-[gd_scene format=3 uid="uid://c5n03jm0dmh3l"]
+[gd_scene load_steps=4 format=3 uid="uid://c5n03jm0dmh3l"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://ys3to5jset56" path="res://—Pngtree—cartoon teacher teaching element_5452685.png" id="1_54c01"]
+[ext_resource type="Script" uid="uid://1o616220ne1i" path="res://matt_teacher_enemy.gd" id="1_gpohw"]
+[ext_resource type="PackedScene" uid="uid://cy3pimde5kns" path="res://Matt's_Pencil.tscn" id="2_6krsi"]
+
+[node name="TeacherEnemy" type="Node2D" groups=["enemy"]]
+script = ExtResource("1_gpohw")
+pencil_scene = ExtResource("2_6krsi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1.5258789e-05)
+scale = Vector2(0.35, 0.24700001)
+texture = ExtResource("1_54c01")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-41, 32, -53, 162, 71, 170, 135, -126, 3, -224, -175, -90, -59, 162)
