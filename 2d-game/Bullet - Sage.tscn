@@ -50,23 +50,21 @@ animations = [{
 radius = 17.463501
 height = 68.01437
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Bullet Animation!" type="AnimatedSprite2D" parent="."]
-position = Vector2(429.00003, 361.00003)
-scale = Vector2(0.30725423, 0.30725417)
+[node name="Bullet Animation!" type="AnimatedSprite2D"]
+position = Vector2(0.99998474, 1.9999542)
+scale = Vector2(0.5659473, 0.5659472)
 sprite_frames = SubResource("SpriteFrames_5byqj")
 autoplay = "default"
 frame = 8
 frame_progress = 1.0
 script = ExtResource("10_ljq6d")
 
-[node name="Area2D" type="Area2D" parent="Bullet Animation!"]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-195.2781, 120.42137)
 scale = Vector2(3.254634, 3.2546346)
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet Animation!/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(14, 16)
 rotation = 1.1676253
 shape = SubResource("CapsuleShape2D_jl2hs")
