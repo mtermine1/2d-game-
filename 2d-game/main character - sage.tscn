@@ -22,14 +22,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
-position = Vector2(270, 300)
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("4_6lxxo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(29, -18, 30, -23, 53, -45, 65, -68, 70, -104, 57, -146, 15, -181, -29, -184, -61, -178, -93, -149, -103, -122, -107, -95, -107, -70, -87, -46, -63, -20, -71, 36, -70, 60, -62, 66, -55, 72, -51, 102, -59, 118, -56, 128, -48, 139, -20, 153, -7, 153, 3, 145, 2, 136, 28, 136, 32, 128, 33, 118, 23, 98, 25, 71, 36, 61, 59, 66, 70, 63, 73, 55, 73, 44, 54, 36, 44, 23, 45, 13, 54, -3, 48, -17)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p73mb")
 autoplay = "default"
 frame_progress = 0.7008626
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("4_6lxxo")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
-polygon = PackedVector2Array(29, -18, 30, -23, 53, -45, 65, -68, 70, -104, 57, -146, 15, -181, -29, -184, -61, -178, -93, -149, -103, -122, -107, -95, -107, -70, -87, -46, -63, -20, -71, 36, -70, 60, -62, 66, -55, 72, -51, 102, -59, 118, -56, 128, -48, 139, -20, 153, -7, 153, 3, 145, 2, 136, 28, 136, 32, 128, 33, 118, 23, 98, 25, 71, 36, 61, 59, 66, 70, 63, 73, 55, 73, 44, 54, 36, 44, 23, 45, 13, 54, -3, 48, -17)
