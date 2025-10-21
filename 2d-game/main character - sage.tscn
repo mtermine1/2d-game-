@@ -32,3 +32,5 @@ polygon = PackedVector2Array(29, -18, 30, -23, 53, -45, 65, -68, 70, -104, 57, -
 sprite_frames = SubResource("SpriteFrames_p73mb")
 autoplay = "default"
 frame_progress = 0.7008626
+
+[node name="Camera2D" type="Camera2D" parent="."]
