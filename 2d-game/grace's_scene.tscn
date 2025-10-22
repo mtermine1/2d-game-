@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://df6hxra2unncp"]
+[gd_scene load_steps=17 format=3 uid="uid://df6hxra2unncp"]
 
 [ext_resource type="Texture2D" uid="uid://c4l1atirwyd4p" path="res://grandmas-house.png" id="1_bvi55"]
-[ext_resource type="Script" uid="uid://d4hylqiej4amo" path="res://placeholder_player.gd" id="2_bm4pd"]
-[ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="3_uea4e"]
+[ext_resource type="Script" uid="uid://b52le0f55kyga" path="res://character_body_2d.gd" id="2_2oqnh"]
+[ext_resource type="Texture2D" uid="uid://dkpp3xpx8a208" path="res://angry grandma.png" id="3_bm4pd"]
+[ext_resource type="Texture2D" uid="uid://bnigbosbpwvxj" path="res://WALK GUY copy/2 copy 5.png" id="3_lq8rj"]
+[ext_resource type="Script" uid="uid://khbi0i0p4v3l" path="res://character_body_2d_2.gd" id="3_uea4e"]
+[ext_resource type="Texture2D" uid="uid://54dok0a5fpwh" path="res://WALK GUY copy/2 copy.png" id="4_2lnam"]
+[ext_resource type="Texture2D" uid="uid://ceivua6ekxx00" path="res://WALK GUY copy/2.png" id="5_f0oq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mugc1"]
 size = Vector2(175, 46)
@@ -20,12 +24,35 @@ size = Vector2(183.45935, 27.948555)
 size = Vector2(138.56042, 22.763062)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cccf5"]
-size = Vector2(131, 122)
+size = Vector2(1093.9448, 24.3507)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq8rj"]
+size = Vector2(107.53125, 40.601074)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lnam"]
+size = Vector2(131.697, 9.941761)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p73mb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lq8rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2lnam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f0oq2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Grace\'s Scene" type="Node2D"]
 
 [node name="GrandmasHouse" type="Sprite2D" parent="."]
-position = Vector2(1281.0001, 458)
+position = Vector2(1540.0001, 502)
 scale = Vector2(2.2237124, 2.222144)
 texture = ExtResource("1_bvi55")
 
@@ -35,10 +62,12 @@ position = Vector2(-12.141903, 6.7502346)
 [node name="Chair_armrest" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
 position = Vector2(-404, 4.002838)
 shape = SubResource("RectangleShape2D_mugc1")
+one_way_collision = true
 
 [node name="Couch_top" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
 position = Vector2(81, -108.07622)
 shape = SubResource("RectangleShape2D_bm4pd")
+one_way_collision = true
 
 [node name="Table" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
 position = Vector2(8.544261, 64.80228)
@@ -50,22 +79,59 @@ one_way_collision = true
 position = Vector2(-158.43575, 212.40297)
 scale = Vector2(0.9999999, 0.9999998)
 shape = SubResource("RectangleShape2D_gr5o1")
+one_way_collision = true
 
 [node name="ottoman_side" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
 position = Vector2(326.48108, 87.753105)
 scale = Vector2(0.9999999, 1.0007057)
 shape = SubResource("RectangleShape2D_2oqnh")
+one_way_collision = true
 
-[node name="Placeholder Player2" type="CharacterBody2D" parent="."]
-position = Vector2(225, 361)
-script = ExtResource("2_bm4pd")
-
-[node name="Sprite2D" type="Sprite2D" parent="Placeholder Player2"]
-texture = ExtResource("3_uea4e")
-
-[node name="Camera2D" type="Camera2D" parent="Placeholder Player2"]
-position = Vector2(440, -33)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder Player2"]
-position = Vector2(3, 0)
+[node name="Floor" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
+position = Vector2(1.210022, 278.1347)
+scale = Vector2(0.9999999, 0.99999976)
 shape = SubResource("RectangleShape2D_cccf5")
+one_way_collision = true
+
+[node name="Mantle" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
+position = Vector2(491.9701, -191.70677)
+scale = Vector2(0.9999999, 0.99999976)
+shape = SubResource("RectangleShape2D_lq8rj")
+one_way_collision = true
+
+[node name="Piano" type="CollisionShape2D" parent="GrandmasHouse/StaticBody2D"]
+position = Vector2(149.74959, -211.50746)
+rotation = 5.561085
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_2lnam")
+one_way_collision = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(472, 397)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_2oqnh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+polygon = PackedVector2Array(29, -18, 30, -23, 53, -45, 65, -68, 70, -104, 57, -146, 15, -181, -29, -184, -61, -178, -93, -149, -103, -122, -107, -95, -107, -70, -87, -46, -63, -20, -71, 36, -70, 60, -62, 66, -55, 72, -51, 102, -59, 118, -56, 128, -48, 139, -20, 153, -7, 153, 3, 145, 2, 136, 28, 136, 32, 128, 33, 118, 23, 98, 25, 71, 36, 61, 59, 66, 70, 63, 73, 55, 73, 44, 54, 36, 44, 23, 45, 13, 54, -3, 48, -17)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_p73mb")
+autoplay = "default"
+frame_progress = 0.7008626
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(423, 57)
+limit_left = 297
+limit_top = -284
+limit_right = 2790
+limit_bottom = 1249
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(2462, 551)
+script = ExtResource("3_uea4e")
+
+[node name="AngryGrandma" type="Sprite2D" parent="CharacterBody2D2"]
+texture = ExtResource("3_bm4pd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D2"]
+polygon = PackedVector2Array(93, -145, 101, -97, 92, -47, 83, 27, 129, 73, 154, 128, 154, 142, 142, 212, 115, 224, 103, 239, -1, 247, 12, 213, -27, 210, -32, 183, -18, 151, -27, 102, -64, 118, -90, 121, -89, 137, -106, 136, -85, 231, -97, 242, -128, 169, -123, 106, -62, 81, -66, 59, -108, 44, -130, 13, -136, -9, -155, -22, -153, -51, -145, -61, -158, -89, -139, -150, -97, -192, -26, -218, 35, -260, 94, -251, 118, -204, 112, -170)
