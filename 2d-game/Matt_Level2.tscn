@@ -1,45 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5s3dhfey5o4o"]
+[gd_scene load_steps=6 format=3 uid="uid://b5s3dhfey5o4o"]
 
 [ext_resource type="Texture2D" uid="uid://bq406q87v8a4q" path="res://free hallway/00033.png" id="1_hvxns"]
 [ext_resource type="PackedScene" uid="uid://vilfgtrb300s" path="res://main character - sage.tscn" id="2_aarqo"]
+[ext_resource type="Texture2D" uid="uid://c4g8n5fbwnsam" path="res://Brown.png" id="2_v888q"]
 [ext_resource type="PackedScene" uid="uid://c5n03jm0dmh3l" path="res://Matt_TeacherEnemy.tscn" id="3_be2y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be2y1"]
-size = Vector2(4128, 26)
+size = Vector2(7612.4165, 26)
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(1, 0)
 
 [node name="Background" type="Parallax2D" parent="."]
 scale = Vector2(1.1144023, 0.92320275)
 scroll_offset = Vector2(4, 100)
 repeat_size = Vector2(1530, 0)
-repeat_times = 5
+repeat_times = 9
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
-position = Vector2(764.7895, 0)
+position = Vector2(764.789, -10)
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("1_hvxns")
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(-14.999999, 177)
+position = Vector2(-17, 179)
 scale = Vector2(1.162548, 1.8596627)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(2074, 186)
+position = Vector2(3261.027, 190.30182)
+scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_be2y1")
+metadata/_edit_group_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Floor"]
-offset_left = 8.601795
-offset_top = 172.07422
-offset_right = 3392.6018
-offset_bottom = 197.07422
-color = Color(0.70021045, 0.62394667, 0.36083362, 1)
+[node name="FloorSprite" type="Sprite2D" parent="Floor"]
+position = Vector2(3257.9304, 188.74391)
+scale = Vector2(118.691345, 0.55453587)
+texture = ExtResource("2_v888q")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("2_aarqo")]
-position = Vector2(109, 369)
+position = Vector2(130, 347)
 
 [node name="TeacherEnemy" parent="." instance=ExtResource("3_be2y1")]
 position = Vector2(1580, 347)
+
+[node name="TeacherEnemy2" parent="." instance=ExtResource("3_be2y1")]
+position = Vector2(2451, 347)
