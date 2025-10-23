@@ -6,8 +6,11 @@ const JUMP_VELOCITY = -800.0
 
 var camera_offset = 440
 
-@export var max_health = 50
+@export var max_health = 3
 var health = max_health
+
+func _ready() -> void:
+	$CanvasLayer/ProgressBar.value = max_health
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -39,6 +42,9 @@ func damage(amount):
 	prints("health:", health)
 	if health <= 0:
 		health = 0
-	$AnimationPlayer.play("damage")
+	$CanvasLayer/ProgressBar.value = health
+	if health == 0:
+		get_tree().reload_current_scene()
+	#$AnimationPlayer.play("damage")
 	
 	

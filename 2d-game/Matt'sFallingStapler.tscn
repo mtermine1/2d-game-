@@ -7,6 +7,8 @@
 size = Vector2(76, 73)
 
 [node name="FallingStapler" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_rv85r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

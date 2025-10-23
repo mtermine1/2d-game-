@@ -37,3 +37,13 @@ frame_progress = 0.7008626
 zoom = Vector2(0.75, 0.75)
 limit_top = -700000
 limit_bottom = 550
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 366.0
+offset_bottom = 63.0
+max_value = 3.0
+step = 1.0

@@ -17,5 +17,5 @@ func spawn_falling_obstacle():
 	add_child(obstacle)
 	obstacle.global_position = Vector2(
 		randf_range(spawn_x_range.x, spawn_x_range.y),
-		-100  # starts above the screen
+		-400  # starts above the screen
 	)
