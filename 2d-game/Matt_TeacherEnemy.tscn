@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://1o616220ne1i" path="res://matt_teacher_enemy.gd" id="1_gpohw"]
 [ext_resource type="PackedScene" uid="uid://cy3pimde5kns" path="res://Matt's_Pencil.tscn" id="2_6krsi"]
 
-[node name="TeacherEnemy" type="Node2D" groups=["enemy"]]
+[node name="TeacherEnemy" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_gpohw")
 pencil_scene = ExtResource("2_6krsi")
 

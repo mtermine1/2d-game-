@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bio3a7ttj2dmk"]
+
+[ext_resource type="Script" uid="uid://xerkhr14wi2f" path="res://drum_set_token.gd" id="1_dkogu"]
+[ext_resource type="Texture2D" uid="uid://b34l3ei630lig" path="res://—Pngtree—gold color drum set_4942190.png" id="2_ecc3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43wdy"]
+size = Vector2(278, 240)
+
+[node name="DrumSetToken" type="Area2D"]
+script = ExtResource("1_dkogu")
+
+[node name="—pngtree—goldColorDrumSet4942190" type="Sprite2D" parent="."]
+position = Vector2(7.6293945e-06, -1.1920929e-07)
+scale = Vector2(0.2294081, 0.20469001)
+texture = ExtResource("2_ecc3r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_43wdy")
