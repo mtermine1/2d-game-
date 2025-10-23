@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2fyddatsv6n4"]
+
+[ext_resource type="Texture2D" uid="uid://bu7g0pruxn8kt" path="res://—Pngtree—blue stapler beautiful stapler hand-painted_3877708.png" id="1_6pjs2"]
+[ext_resource type="Script" uid="uid://clnce6mnvdmnk" path="res://matt's_falling_stapler.gd" id="1_rv85r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1643"]
+size = Vector2(76, 73)
+
+[node name="FallingStapler" type="RigidBody2D"]
+script = ExtResource("1_rv85r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.6293945e-06, -7.6293945e-06)
+scale = Vector2(0.050232578, 0.06688233)
+texture = ExtResource("1_6pjs2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_i1643")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

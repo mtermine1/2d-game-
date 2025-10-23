@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5s3dhfey5o4o"]
+[gd_scene load_steps=10 format=3 uid="uid://b5s3dhfey5o4o"]
 
+[ext_resource type="Script" uid="uid://cn2kpv5wy0pjs" path="res://matt_level_2.gd" id="1_6pbpi"]
 [ext_resource type="Texture2D" uid="uid://bq406q87v8a4q" path="res://free hallway/00033.png" id="1_hvxns"]
+[ext_resource type="PackedScene" uid="uid://c2fyddatsv6n4" path="res://Matt'sFallingStapler.tscn" id="2_3oq7b"]
 [ext_resource type="PackedScene" uid="uid://vilfgtrb300s" path="res://main character - sage.tscn" id="2_aarqo"]
 [ext_resource type="Texture2D" uid="uid://c4g8n5fbwnsam" path="res://Brown.png" id="2_v888q"]
 [ext_resource type="PackedScene" uid="uid://c5n03jm0dmh3l" path="res://Matt_TeacherEnemy.tscn" id="3_be2y1"]
@@ -9,7 +11,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be2y1"]
 size = Vector2(7990.8965, 26)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oq7b"]
+size = Vector2(428, 70)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_6pbpi")
+falling_obstacle_scene = ExtResource("2_3oq7b")
+spawn_interval = 10.0
+spawn_x_range = Vector2(0, 3000)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(-17, 179)
@@ -28,18 +37,6 @@ texture = ExtResource("2_v888q")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_aarqo")]
-position = Vector2(130, 347)
-
-[node name="TeacherEnemy" parent="." instance=ExtResource("3_be2y1")]
-position = Vector2(1580, 347)
-
-[node name="TeacherEnemy2" parent="." instance=ExtResource("3_be2y1")]
-position = Vector2(2451, 347)
-
-[node name="DrumSetToken" parent="." instance=ExtResource("5_2yysk")]
-position = Vector2(8413, 347)
-
 [node name="Background" type="Parallax2D" parent="."]
 scale = Vector2(1.1144023, 0.92320275)
 scroll_offset = Vector2(4, 100)
@@ -51,3 +48,83 @@ metadata/_edit_group_ = true
 position = Vector2(764.789, -10)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("1_hvxns")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_aarqo")]
+position = Vector2(89, 399)
+
+[node name="TeacherEnemy" parent="." instance=ExtResource("3_be2y1")]
+position = Vector2(1648, 351)
+
+[node name="TeacherEnemy2" parent="." instance=ExtResource("3_be2y1")]
+position = Vector2(3124, 425)
+scale = Vector2(0.54377365, 0.6136158)
+
+[node name="TeacherEnemy3" parent="." instance=ExtResource("3_be2y1")]
+position = Vector2(2417, -111)
+
+[node name="TeacherEnemy4" parent="." instance=ExtResource("3_be2y1")]
+position = Vector2(3388, -147)
+
+[node name="TeacherEnemy5" parent="." instance=ExtResource("3_be2y1")]
+position = Vector2(4154, 273)
+
+[node name="TeacherEnemy6" parent="." instance=ExtResource("3_be2y1")]
+position = Vector2(4698, 169)
+
+[node name="DrumSetToken2" parent="." instance=ExtResource("5_2yysk")]
+position = Vector2(5227, 273)
+
+[node name="Ledge" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge"]
+position = Vector2(2417, 100)
+shape = SubResource("RectangleShape2D_3oq7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ledge"]
+position = Vector2(2417.0002, 104.5)
+scale = Vector2(6.875, 0.9843751)
+texture = ExtResource("2_v888q")
+
+[node name="Ledge2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge2"]
+position = Vector2(3375, 54)
+shape = SubResource("RectangleShape2D_3oq7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ledge2"]
+position = Vector2(3388, 53.000008)
+scale = Vector2(6.875, 1)
+texture = ExtResource("2_v888q")
+
+[node name="Ledge4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge4"]
+position = Vector2(4137, 481)
+shape = SubResource("RectangleShape2D_3oq7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ledge4"]
+position = Vector2(4154, 478.99997)
+scale = Vector2(6.875, 1)
+texture = ExtResource("2_v888q")
+
+[node name="Ledge5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge5"]
+position = Vector2(4698, 367)
+shape = SubResource("RectangleShape2D_3oq7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ledge5"]
+position = Vector2(4698, 367)
+scale = Vector2(6.875, 1)
+texture = ExtResource("2_v888q")
+
+[node name="Ledge3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge3"]
+position = Vector2(5241, 412)
+shape = SubResource("RectangleShape2D_3oq7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ledge3"]
+position = Vector2(5244, 411)
+scale = Vector2(6.875, 1)
+texture = ExtResource("2_v888q")
