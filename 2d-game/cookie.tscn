@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://y1pp56cixj6"]
+
+[ext_resource type="Script" uid="uid://4ocv1q165uki" path="res://matt's_pencil.gd" id="1_4g1sd"]
+[ext_resource type="Texture2D" uid="uid://cqpp6cb41s8ec" path="res://pngimg.com - cookie_PNG13656.png" id="2_4g1sd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cd8qg"]
+radius = 209.61154
+
+[node name="Pencil" type="Area2D"]
+script = ExtResource("1_4g1sd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0)
+shape = SubResource("CircleShape2D_cd8qg")
+
+[node name="Pngimg_comCookiePng13656" type="Sprite2D" parent="."]
+position = Vector2(2.000061, 1.0000305)
+scale = Vector2(0.28544915, 0.28544915)
+texture = ExtResource("2_4g1sd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
