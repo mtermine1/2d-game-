@@ -1,25 +1,26 @@
-extends AnimatedSprite2D
-@export var speed = 2.0
-@export var damage_amount = 5
+extends Area2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var speed := 600.0         # how fast the note travels
+@export var damage := 1            # damage it deals to enemies
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame
 func _process(delta):
-	position.x += speed
-	animation
+	position.x += speed * delta     # move horizontally
 
-
-func _on_area_2d_body_entered(body):
-	body.damage(damage_amount)
-	queue_free()
-	
+# Detect collision with enemies
 func _on_body_entered(body):
 	if body.is_in_group("enemy"):
-		body.queue_free()    # remove the teache
-		queue_free()         # remove the bullet
+		if body.has_method("take_damage"):
+			body.take_damage(damage)  # apply damage
+		queue_free()                  # remove the note after impact
 
+# Optional: if you also have an Area2D inside (like a hitbox)
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemy"):
+		if body.has_method("take_damage"):
+			body.take_damage(damage)
+		queue_free()
+
+# Clean up when it leaves the screen
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
