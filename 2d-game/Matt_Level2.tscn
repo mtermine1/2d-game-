@@ -17,7 +17,7 @@ size = Vector2(428, 70)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_6pbpi")
 falling_obstacle_scene = ExtResource("2_3oq7b")
-spawn_interval = 1.0
+spawn_interval = 2.5
 spawn_x_range = Vector2(0, 3000)
 
 [node name="Floor" type="StaticBody2D" parent="."]
@@ -72,7 +72,7 @@ position = Vector2(4154, 273)
 position = Vector2(4698, 169)
 
 [node name="DrumSetToken2" parent="." instance=ExtResource("5_2yysk")]
-position = Vector2(5227, 273)
+position = Vector2(6920, 416)
 
 [node name="Ledge" type="StaticBody2D" parent="."]
 
@@ -121,10 +121,10 @@ texture = ExtResource("2_v888q")
 [node name="Ledge3" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ledge3"]
-position = Vector2(5241, 412)
+position = Vector2(6428, 425)
 shape = SubResource("RectangleShape2D_3oq7b")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ledge3"]
-position = Vector2(5244, 411)
+position = Vector2(6441.0005, 425)
 scale = Vector2(6.875, 1)
 texture = ExtResource("2_v888q")
