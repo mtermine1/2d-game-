@@ -49,3 +49,6 @@ frame_progress = 0.7008626
 zoom = Vector2(0.75, 0.75)
 limit_top = -700000
 limit_bottom = 550
+
+[node name="FireRateTimer" type="Timer" parent="."]
+one_shot = true

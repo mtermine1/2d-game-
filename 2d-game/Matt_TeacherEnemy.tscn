@@ -7,6 +7,7 @@
 [node name="TeacherEnemy" type="Area2D" groups=["enemy"]]
 collision_layer = 2
 script = ExtResource("1_gpohw")
+health = 2
 pencil_scene = ExtResource("2_6krsi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

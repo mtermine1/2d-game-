@@ -10,3 +10,4 @@ func _on_body_entered(body):
 		print("Level Complete! 🎵")
 		emit_signal("level_completed")
 		get_tree().change_scene_to_file("res://scenes/level_complete_screen.tscn")
+		queue_free()

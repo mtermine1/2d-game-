@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const Bullet = preload("res://Bullet - Sage.tscn")
-const SPEED = 300.0
+const SPEED = 350.0
 const JUMP_VELOCITY = -800.0
 
 var camera_offset = 440
@@ -9,9 +9,16 @@ var camera_offset = 440
 @export var max_health = 3
 var health = max_health
 
+@export var fire_rate := 0.4  # seconds between shots
+var can_fire := true
+
+@onready var fire_timer: Timer = $FireRateTimer
 @onready var health_bar = $CanvasLayer/ProgressBar   # ✅ Link to your on-screen bar
 
 func _ready() -> void:
+	# ✅ Connect fire rate timer
+	fire_timer.timeout.connect(_on_fire_rate_timeout)
+	
 	# ✅ Make sure health bar starts full
 	health = max_health
 	if health_bar:
@@ -19,16 +26,17 @@ func _ready() -> void:
 		health_bar.value = max_health
 		print("Health bar initialized:", health)
 
+
 func _physics_process(delta: float) -> void:
 	# Apply gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Attack (shoot music note)
-	if Input.is_action_just_pressed("attack"):
-		var new_bullet = Bullet.instantiate()
-		get_parent().add_child(new_bullet)
-		new_bullet.global_position = global_position
+	# ✅ Attack (shoot music note) with cooldown
+	if Input.is_action_just_pressed("attack") and can_fire:
+		shoot_bullet()
+		can_fire = false
+		fire_timer.start(fire_rate)
 
 	# Jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -44,20 +52,31 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
+# ✅ Fire function
+func shoot_bullet() -> void:
+	var new_bullet = Bullet.instantiate()
+	get_parent().add_child(new_bullet)
+	new_bullet.global_position = global_position
+
+
+# ✅ Fire timer callback
+func _on_fire_rate_timeout() -> void:
+	can_fire = true
+
+
+# ✅ Damage function
 func damage(amount: int) -> void:
-	# ✅ Subtract health and update UI
 	health -= amount
 	health = clamp(health, 0, max_health)
 	print("Health:", health)
 
 	if health_bar:
-		# ✅ Convert to percentage if ProgressBar max_value != max_health
 		if health_bar.max_value != max_health:
 			health_bar.value = float(health) / float(max_health) * health_bar.max_value
 		else:
 			health_bar.value = health
 
-	# ✅ Handle death / reset
 	if health <= 0:
 		print("Player died! Restarting level...")
 		get_tree().reload_current_scene()
