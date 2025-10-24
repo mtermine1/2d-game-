@@ -34,3 +34,4 @@ func _physics_process(delta: float) -> void:
 		$Camera2D.position.x+=5
 	else: 
 		$Camera2D.position.x-=5
+#what the heck is all this
