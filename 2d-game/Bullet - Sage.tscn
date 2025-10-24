@@ -46,21 +46,21 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Bullet Animation!" type="AnimatedSprite2D"]
-position = Vector2(0.99998474, 1.9999542)
-scale = Vector2(0.5659473, 0.5659472)
+[node name="Area2D" type="Area2D"]
+position = Vector2(-195.2781, 120.42137)
+scale = Vector2(3.254634, 3.2546346)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(14, 16)
+rotation = 1.1676253
+polygon = PackedVector2Array(-16.246935, 10.936348, -15.572357, 30.111305, -6.4368954, 36.36882, 6.738474, 29.003616, 16.337732, 14.801041, 19.21792, -9.940399, 12.139086, -22.403389, -112.89592, -62.750366, -86.8907, -71.13566, -72.44445, -85.631714, -61.581406, -111.09976, -63.086647, -115.87338, -78.51742, -93.53409, -90.187546, -81.39527, -105.78641, -73.88332, -136.49898, -66.915665, -130.85913, -62.149162, -0.9771328, -22.095673, -8.806135, -14.810959, -13.492153, -3.8247414)
+
+[node name="Bullet Animation!" type="AnimatedSprite2D" parent="."]
+position = Vector2(61.536285, -35.77095)
+scale = Vector2(0.32862204, 0.32862195)
 sprite_frames = SubResource("SpriteFrames_5byqj")
 autoplay = "default"
 frame = 8
 frame_progress = 1.0
 script = ExtResource("10_ljq6d")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-195.2781, 120.42137)
-scale = Vector2(3.254634, 3.2546346)
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(14, 16)
-rotation = 1.1676253
-polygon = PackedVector2Array(-16.246935, 10.936348, -15.572357, 30.111305, -6.4368954, 36.36882, 6.738474, 29.003616, 16.337732, 14.801041, 19.21792, -9.940399, 12.139086, -22.403389, -112.89592, -62.750366, -86.8907, -71.13566, -72.44445, -85.631714, -61.581406, -111.09976, -63.086647, -115.87338, -78.51742, -93.53409, -90.187546, -81.39527, -105.78641, -73.88332, -136.49898, -66.915665, -130.85913, -62.149162, -0.9771328, -22.095673, -8.806135, -14.810959, -13.492153, -3.8247414)
