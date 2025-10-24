@@ -9,8 +9,11 @@ var camera_offset = 440
 @export var max_health = 3
 var health = max_health
 
-func _ready() -> void:
-	$CanvasLayer/ProgressBar.value = max_health
+var health_bar
+
+func _ready():
+	if health_bar:
+		health_bar.value = max_health
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -18,7 +21,9 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	if Input.is_action_just_pressed("attack"):
 		var newbullet = Bullet.instantiate()
-		add_child(newbullet)
+		get_parent().add_child(newbullet)
+		newbullet.global_position = global_position
+
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

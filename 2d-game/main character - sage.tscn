@@ -25,6 +25,16 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("4_6lxxo")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 366.0
+offset_bottom = 63.0
+max_value = 3.0
+step = 1.0
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(29, -18, 30, -23, 53, -45, 65, -68, 70, -104, 57, -146, 15, -181, -29, -184, -61, -178, -93, -149, -103, -122, -107, -95, -107, -70, -87, -46, -63, -20, -71, 36, -70, 60, -62, 66, -55, 72, -51, 102, -59, 118, -56, 128, -48, 139, -20, 153, -7, 153, 3, 145, 2, 136, 28, 136, 32, 128, 33, 118, 23, 98, 25, 71, 36, 61, 59, 66, 70, 63, 73, 55, 73, 44, 54, 36, 44, 23, 45, 13, 54, -3, 48, -17)
 
@@ -37,13 +47,3 @@ frame_progress = 0.7008626
 zoom = Vector2(0.75, 0.75)
 limit_top = -700000
 limit_bottom = 550
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 64.0
-offset_top = 24.0
-offset_right = 366.0
-offset_bottom = 63.0
-max_value = 3.0
-step = 1.0

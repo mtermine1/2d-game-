@@ -1,20 +1,15 @@
 extends AnimatedSprite2D
-@export var speed = 2.0
-@export var damage_amount = 5
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var speed: float = 400.0
+@export var damage_amount: int = 5
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	position.x += speed
+func _process(delta: float) -> void:
+	position.x += speed * delta
 
-
-func _on_area_2d_body_entered(body):
-	body.damage(damage_amount)
+func _on_body_entered(body: Node) -> void:
+	if body.has_method("damage"):
+		body.damage(damage_amount)
 	queue_free()
 
-
-func _on_visible_on_screen_notifier_2d_screen_exited():
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
