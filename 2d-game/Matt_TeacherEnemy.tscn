@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cy3pimde5kns" path="res://Matt's_Pencil.tscn" id="2_6krsi"]
 
 [node name="TeacherEnemy" type="Area2D" groups=["enemy"]]
+collision_layer = 2
 script = ExtResource("1_gpohw")
 pencil_scene = ExtResource("2_6krsi")
 
@@ -21,3 +22,5 @@ autostart = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-41, 32, -53, 162, 71, 170, 135, -126, 3, -224, -175, -90, -59, 162)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,5 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b3egglmhj4nln"]
 
+[ext_resource type="Script" uid="uid://dyygqrahnv5ht" path="res://bullet___sage.gd" id="1_dq0nl"]
 [ext_resource type="Texture2D" uid="uid://dg7s8legw07ui" path="res://bullet animation/Untitled_Artwork-1 2.png" id="1_fd626"]
 [ext_resource type="Texture2D" uid="uid://0k8inldj7nqc" path="res://bullet animation/Untitled_Artwork-2 2.png" id="2_ljq6d"]
 [ext_resource type="Texture2D" uid="uid://cpp7t6sv33u7e" path="res://bullet animation/Untitled_Artwork-3 2.png" id="3_jl2hs"]
@@ -9,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c6i8fe70cwidh" path="res://bullet animation/Untitled_Artwork-7 2.png" id="7_4q36y"]
 [ext_resource type="Texture2D" uid="uid://be68oyipfe3l4" path="res://bullet animation/Untitled_Artwork-8 2.png" id="8_kd5ar"]
 [ext_resource type="Texture2D" uid="uid://bljcqsqoqxrao" path="res://bullet animation/Untitled_Artwork-9 2.png" id="9_60wpv"]
-[ext_resource type="Script" uid="uid://ba7x1wqptu6fr" path="res://bullet_animation!.gd" id="10_ljq6d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5byqj"]
 animations = [{
@@ -46,10 +46,12 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" groups=["player_projectiles"]]
 position = Vector2(-195.2781, 120.42137)
 scale = Vector2(3.254634, 3.2546346)
+collision_mask = 2
 monitorable = false
+script = ExtResource("1_dq0nl")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(55.72797, 45.144276)
@@ -64,4 +66,5 @@ sprite_frames = SubResource("SpriteFrames_5byqj")
 autoplay = "default"
 frame = 8
 frame_progress = 1.0
-script = ExtResource("10_ljq6d")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -24,8 +24,7 @@ func take_damage(amount: int):
 func die():
 	queue_free()  # remove teacher from scene
 
-# ✅ This allows the music note (bullet) to call `take_damage` when it collides
-func _on_body_entered(body):
+func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_projectile"):  # only reacts to player attacks
 		if body.has_method("get_damage"):
 			take_damage(body.get_damage())
