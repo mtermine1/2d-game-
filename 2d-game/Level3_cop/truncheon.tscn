@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjr0etmr5j1al"]
+
+[ext_resource type="Script" uid="uid://71sn6bkk41me" path="res://Level3_cop/truncheon.gd" id="1_bxpkq"]
+[ext_resource type="Texture2D" uid="uid://8mhurqvr6gfu" path="res://Level3_cop/police/truncheon.png" id="1_j1jwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxpkq"]
+size = Vector2(1228, 520)
+
+[node name="Truncheon" type="Node2D"]
+position = Vector2(910, 490)
+script = ExtResource("1_bxpkq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(596, 20.99997)
+scale = Vector2(2.774648, 7.681818)
+texture = ExtResource("1_j1jwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(606, 45)
+shape = SubResource("RectangleShape2D_bxpkq")

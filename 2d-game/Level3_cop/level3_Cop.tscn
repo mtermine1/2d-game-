@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmfi63m8lpy82"]
+
+[ext_resource type="Script" uid="uid://bvrs81xjkpgy5" path="res://Level3_cop/level_3_cop.gd" id="1_eu57i"]
+[ext_resource type="Texture2D" uid="uid://c2g6fyorffo41" path="res://Level3_cop/background/Sample.png" id="1_o67vv"]
+[ext_resource type="Texture2D" uid="uid://bhb35ihm145df" path="res://Level3_cop/police/2_police_attack_Attack1_001.png" id="2_clqnm"]
+[ext_resource type="Script" uid="uid://dtgle46m4q1v" path="res://Level3_cop/player.gd" id="2_io6ab"]
+[ext_resource type="Texture2D" uid="uid://bnigbosbpwvxj" path="res://WALK GUY copy/2 copy 5.png" id="4_7bg8e"]
+[ext_resource type="Script" uid="uid://iyf83q8n8ky8" path="res://Level3_cop/cop_enemy.gd" id="5_7cuj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o67vv"]
+size = Vector2(3666, 758)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clqnm"]
+size = Vector2(499, 501)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwq5o"]
+size = Vector2(385, 813)
+
+[node name="Level3Cop" type="Node2D"]
+script = ExtResource("1_eu57i")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_o67vv")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(4, 649)
+shape = SubResource("RectangleShape2D_o67vv")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_io6ab")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+position = Vector2(-1005.0001, 93)
+scale = Vector2(1.944056, 1.2824074)
+texture = ExtResource("4_7bg8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-1006.5, 70.5)
+shape = SubResource("RectangleShape2D_clqnm")
+
+[node name="CopEnemy" type="CharacterBody2D" parent="."]
+script = ExtResource("5_7cuj2")
+
+[node name="Sprite" type="Sprite2D" parent="CopEnemy"]
+position = Vector2(794, 66)
+scale = Vector2(0.5842451, 0.6162602)
+texture = ExtResource("2_clqnm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CopEnemy"]
+position = Vector2(805, 63)
+shape = SubResource("RectangleShape2D_uwq5o")
