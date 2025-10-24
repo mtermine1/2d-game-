@@ -20,6 +20,7 @@ size = Vector2(385, 813)
 script = ExtResource("1_eu57i")
 
 [node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2, 18)
 scale = Vector2(4, 4)
 texture = ExtResource("1_o67vv")
 
@@ -30,6 +31,7 @@ position = Vector2(4, 649)
 shape = SubResource("RectangleShape2D_o67vv")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-23, 14)
 script = ExtResource("2_io6ab")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
@@ -42,6 +44,7 @@ position = Vector2(-1006.5, 70.5)
 shape = SubResource("RectangleShape2D_clqnm")
 
 [node name="CopEnemy" type="CharacterBody2D" parent="."]
+position = Vector2(55, -34)
 script = ExtResource("5_7cuj2")
 
 [node name="Sprite" type="Sprite2D" parent="CopEnemy"]
@@ -52,3 +55,6 @@ texture = ExtResource("2_clqnm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CopEnemy"]
 position = Vector2(805, 63)
 shape = SubResource("RectangleShape2D_uwq5o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
