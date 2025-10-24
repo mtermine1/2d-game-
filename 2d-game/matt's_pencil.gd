@@ -15,3 +15,11 @@ func _process(delta):
 
 	if position.x < -100 or position.x > 4000:
 		queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		body.damage(1)
+	queue_free()
+	
+	pass # Replace with function body.

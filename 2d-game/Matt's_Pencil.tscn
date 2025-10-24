@@ -16,3 +16,5 @@ metadata/_edit_group_ = true
 scale = Vector2(0.9822443, 0.9694102)
 polygon = PackedVector2Array(-5, 6, 26.469994, -43.325314, 9.16269, -35.072872, -27.48807, 34.041317, -17.307302, 38.167538, 21.37961, -37.135983)
 metadata/_edit_group_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

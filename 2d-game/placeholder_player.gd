@@ -29,8 +29,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+# Move the player
 
-	if $Camera2D.position.x<=camera_offset:
-		$Camera2D.position.x+=5
-	else: 
-		$Camera2D.position.x-=5
+# Smooth camera follow with slight lag and directional offset
+var target_offset_x = 440 if velocity.x > 0 else -440 if velocity.x < 0 else $Camera2D.offset.x
+$Camera2D.offset.x = lerp($Camera2D.offset.x, target_offset_x, 0.05)
+
+# Smooth position lag behind the player
+var target_camera_pos = global_position
+$Camera2D.global_position.x = lerp($Camera2D.global_position.x, target_camera_pos.x, 0.1)
+$Camera2D.global_position.y = lerp($Camera2D.global_position.y, target_camera_pos.y, 0.1)
