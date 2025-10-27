@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjetxthojkc7l"]
+
+[ext_resource type="Texture2D" uid="uid://deoahc2yi5ck2" path="res://sage's drawings/instructions.png" id="1_7ls63"]
+[ext_resource type="PackedScene" uid="uid://vilfgtrb300s" path="res://main character - sage.tscn" id="2_ne5nb"]
+[ext_resource type="Texture2D" uid="uid://c4g8n5fbwnsam" path="res://Brown.png" id="3_jh4dl"]
+[ext_resource type="Script" uid="uid://cjv4ipp51dokp" path="res://tolevel1!.gd" id="4_jh4dl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gosh8"]
+size = Vector2(7990.8965, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ne5nb"]
+size = Vector2(358, 594)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-2507, -776.99994)
+scale = Vector2(3.2658243, 3.2658234)
+color = Color(1, 0.5019608, 0.43529412, 1)
+polygon = PackedVector2Array(-52, -37, -92, 807, 1655, 954, 1458, -383)
+
+[node name="Instructions" type="Sprite2D" parent="."]
+position = Vector2(277, 117)
+scale = Vector2(0.51738626, 0.5173861)
+texture = ExtResource("1_7ls63")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ne5nb")]
+position = Vector2(140.99998, 469.99997)
+scale = Vector2(0.35, 0.35)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(-17, 179)
+scale = Vector2(1.162548, 1.8596627)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(3443.299, 202.18721)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_gosh8")
+metadata/_edit_group_ = true
+
+[node name="FloorSprite" type="Sprite2D" parent="Floor"]
+position = Vector2(1551.1189, 203.8004)
+scale = Vector2(150.37685, 0.55453587)
+texture = ExtResource("3_jh4dl")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-523, 283)
+shape = SubResource("RectangleShape2D_ne5nb")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1089, 274)
+shape = SubResource("RectangleShape2D_ne5nb")
+
+[node name="totheinstructions!" type="Button" parent="."]
+modulate = Color(0.9411765, 0.94509804, 1, 1)
+offset_left = 696.0
+offset_top = 432.0
+offset_right = 887.0
+offset_bottom = 521.0
+script = ExtResource("4_jh4dl")

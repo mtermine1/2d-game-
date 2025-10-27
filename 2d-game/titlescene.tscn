@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3k14t5cn4oof"]
+
+[ext_resource type="Texture2D" uid="uid://cmwmngleuyctn" path="res://sage's drawings/title scene.png" id="1_jq2n0"]
+[ext_resource type="Script" uid="uid://7q138qpx6r0y" path="res://totheinstructions!.gd" id="2_eadt8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-6.1035156e-05, 0)
+scale = Vector2(1.0000001, 1.0000001)
+color = Color(1, 0.5019608, 0.43529412, 1)
+polygon = PackedVector2Array(-52, -37, -92, 807, 1655, 954, 1458, -383)
+
+[node name="TitleScene" type="Sprite2D" parent="."]
+position = Vector2(574.0983, 323)
+scale = Vector2(0.39088726, 0.39088732)
+texture = ExtResource("1_jq2n0")
+
+[node name="totheinstructions!" type="Button" parent="."]
+modulate = Color(0.9411765, 0.94509804, 1, 1)
+offset_left = 802.0
+offset_top = 502.0
+offset_right = 1027.3871
+offset_bottom = 625.0
+script = ExtResource("2_eadt8")
