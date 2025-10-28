@@ -126,6 +126,14 @@ limit_top = -284
 limit_right = 2790
 limit_bottom = 1249
 
+[node name="FireRateTimer" type="Timer" parent="Main Character"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Main Character"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Main Character/CanvasLayer"]
+offset_right = 4.0
+offset_bottom = 27.0
+
 [node name="Grandma" parent="." groups=["enemy"] instance=ExtResource("6_2oqnh")]
 position = Vector2(2462, 551)
 
