@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://df6hxra2unncp"]
+[gd_scene load_steps=18 format=3 uid="uid://df6hxra2unncp"]
 
 [ext_resource type="Texture2D" uid="uid://c4l1atirwyd4p" path="res://grandmas-house.png" id="1_bvi55"]
 [ext_resource type="Script" uid="uid://b52le0f55kyga" path="res://character_body_2d.gd" id="2_2oqnh"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://54dok0a5fpwh" path="res://WALK GUY copy/2 copy.png" id="4_2lnam"]
 [ext_resource type="Texture2D" uid="uid://ceivua6ekxx00" path="res://WALK GUY copy/2.png" id="5_f0oq2"]
 [ext_resource type="PackedScene" uid="uid://cjrdlskvwm7tf" path="res://Graces grandma.tscn" id="6_2oqnh"]
-[ext_resource type="PackedScene" uid="uid://y1pp56cixj6" path="res://cookie.tscn" id="7_2lnam"]
 [ext_resource type="PackedScene" uid="uid://cprrdabrgjgdk" path="res://microphone.tscn" id="7_lq8rj"]
 [ext_resource type="Script" uid="uid://cjjg4dxrh1y1d" path="res://level_manager.gd" id="8_lq8rj"]
 
@@ -138,14 +137,9 @@ limit_bottom = 1249
 offset_right = 4.0
 offset_bottom = 27.0
 
-[node name="Grandma" parent="." groups=["enemy"] instance=ExtResource("6_2oqnh")]
+[node name="Grandma" parent="." instance=ExtResource("6_2oqnh")]
 position = Vector2(2462, 551)
-speed = 400.0
-damage = 1
-max_health = 10
-cookie_scene = ExtResource("7_2lnam")
-shoot_interval = 2.0
-cookie_speed = 400.0
+shoot_interval = 100.0
 
 [node name="Microphone" parent="." instance=ExtResource("7_lq8rj")]
 position = Vector2(2664, 467)

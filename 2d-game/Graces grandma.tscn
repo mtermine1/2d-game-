@@ -1,20 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjrdlskvwm7tf"]
+[gd_scene load_steps=4 format=3 uid="uid://cjrdlskvwm7tf"]
 
 [ext_resource type="Script" uid="uid://khbi0i0p4v3l" path="res://character_body_2d_2.gd" id="1_gebt6"]
+[ext_resource type="PackedScene" uid="uid://y1pp56cixj6" path="res://cookie.tscn" id="2_d8wgo"]
 [ext_resource type="Texture2D" uid="uid://dkpp3xpx8a208" path="res://angry grandma.png" id="2_r4hqn"]
 
-[node name="Grandma" type="CharacterBody2D"]
+[node name="Grandma" type="Area2D" groups=["enemy"]]
 script = ExtResource("1_gebt6")
-speed = null
-damage = null
-max_health = null
-shoot_interval = null
-cookie_speed = null
+cookie_scene = ExtResource("2_d8wgo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(22, -51, 120, -195, 78, -255, -4, -217, -134, -165, -156, -77, -148, -11, -74, 69, -138, 117, -116, 245, -66, 233, -96, 143, -38, 117, -34, 189, -2, 237, 152, 253, 156, 129, 104, 13, 104, -63, 122, -199)
 
 [node name="AngryGrandma" type="Sprite2D" parent="."]
 texture = ExtResource("2_r4hqn")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(93, -145, 101, -97, 92, -47, 83, 27, 129, 73, 154, 128, 154, 142, 142, 212, 115, 224, 103, 239, -1, 247, 12, 213, -27, 210, -32, 183, -18, 151, -27, 102, -64, 118, -90, 121, -89, 137, -106, 136, -85, 231, -97, 242, -128, 169, -123, 106, -62, 81, -66, 59, -108, 44, -130, 13, -136, -9, -155, -22, -153, -51, -145, -61, -158, -89, -139, -150, -97, -192, -26, -218, 35, -260, 94, -251, 118, -204, 112, -170)
-
 [node name="ShootTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

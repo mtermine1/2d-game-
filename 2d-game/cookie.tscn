@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://y1pp56cixj6"]
 
-[ext_resource type="Script" uid="uid://4ocv1q165uki" path="res://matt's_pencil.gd" id="1_4g1sd"]
+[ext_resource type="Script" uid="uid://c5p0s7qiw7jh4" path="res://cookie.gd" id="1_4g1sd"]
 [ext_resource type="Texture2D" uid="uid://cqpp6cb41s8ec" path="res://pngimg.com - cookie_PNG13656.png" id="2_4g1sd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cd8qg"]
