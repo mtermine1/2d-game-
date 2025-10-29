@@ -1,25 +1,41 @@
 extends Area2D
 
 @export var speed := 600.0
-@export var gravity_force := 600.0
-@export var throw_angle_degrees := -20.0  # negative = slightly upward
-@onready var velocity = Vector2.ZERO
+@export var gravity_force := 0.0  # straight-line shooting
+@export var lifetime := 5.0        # cookie will disappear after 5 seconds
+
+var velocity := Vector2.ZERO
+var direction := Vector2.ZERO
+var timer := 0.0
+
+# Track the shooter to ignore collisions
+var shooter: Node = null
+
+func setup(dir: Vector2, spd: float, shooter_node: Node):
+	direction = dir.normalized()
+	speed = spd
+	velocity = direction * speed
+	shooter = shooter_node
 
 func _ready():
-	var angle = deg_to_rad(throw_angle_degrees)
-	velocity = Vector2(-speed * cos(angle), speed * sin(angle))
+	if has_node("CollisionShape2D"):
+		var shape = $CollisionShape2D
+		# Optional: brief delay so it doesn't collide immediately with Grandma
+		shape.disabled = true
+		await get_tree().create_timer(0.1).timeout
+		shape.disabled = false
 
 func _process(delta):
-	velocity.y += gravity_force * delta   # renamed variable here
+	velocity.y += gravity_force * delta
 	position += velocity * delta
 
-	if position.x < -100 or position.x > 4000:
+	timer += delta
+	if timer > lifetime:
 		queue_free()
 
-
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		body.damage(1)
+	if body == shooter:
+		return  # ignore Grandma
+	if body.is_in_group("player") and body.has_method("take_damage"):
+		body.take_damage(1)
 	queue_free()
-	
-	pass # Replace with function body.

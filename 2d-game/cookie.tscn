@@ -6,7 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cd8qg"]
 radius = 209.61154
 
-[node name="Pencil" type="Area2D"]
+[node name="cookie" type="Area2D"]
+scale = Vector2(-0.4252128, -0.41179922)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_4g1sd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
