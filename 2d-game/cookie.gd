@@ -14,7 +14,6 @@ func setup(dir: Vector2, cookie_speed: float, origin: Node) -> void:
 func _process(delta: float) -> void:
 	position += direction * speed * delta
 
-# ✅ If it hits the player
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		if body.has_method("damage"):

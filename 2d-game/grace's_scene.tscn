@@ -139,7 +139,7 @@ offset_bottom = 27.0
 
 [node name="Grandma" parent="." instance=ExtResource("6_2oqnh")]
 position = Vector2(2462, 551)
-shoot_interval = 100.0
+shoot_interval = 3.0
 
 [node name="Microphone" parent="." instance=ExtResource("7_lq8rj")]
 position = Vector2(2664, 467)
@@ -147,3 +147,5 @@ scale = Vector2(0.74375, 0.74375004)
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("8_lq8rj")
+
+[connection signal="area_entered" from="Grandma" to="Grandma" method="_on_area_entered"]

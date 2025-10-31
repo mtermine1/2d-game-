@@ -80,3 +80,7 @@ func damage(amount: int) -> void:
 	if health <= 0:
 		print("Player died! Restarting level...")
 		get_tree().reload_current_scene()
+
+
+func _on_grandma_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

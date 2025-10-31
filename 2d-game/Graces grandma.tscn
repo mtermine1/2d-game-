@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dkpp3xpx8a208" path="res://angry grandma.png" id="2_r4hqn"]
 
 [node name="Grandma" type="Area2D" groups=["enemy"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_gebt6")
 cookie_scene = ExtResource("2_d8wgo")
 
