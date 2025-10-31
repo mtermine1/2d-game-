@@ -11,7 +11,7 @@
 size = Vector2(3666, 758)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clqnm"]
-size = Vector2(499, 501)
+size = Vector2(480, 476)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwq5o"]
 size = Vector2(385, 813)
@@ -30,7 +30,7 @@ texture = ExtResource("1_o67vv")
 position = Vector2(4, 649)
 shape = SubResource("RectangleShape2D_o67vv")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(-23, 14)
 script = ExtResource("2_io6ab")
 
@@ -40,10 +40,10 @@ scale = Vector2(1.944056, 1.2824074)
 texture = ExtResource("4_7bg8e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-1006.5, 70.5)
+position = Vector2(-1016, 83)
 shape = SubResource("RectangleShape2D_clqnm")
 
-[node name="CopEnemy" type="CharacterBody2D" parent="."]
+[node name="CopEnemy" type="CharacterBody2D" parent="." groups=["enemy"]]
 position = Vector2(55, -34)
 script = ExtResource("5_7cuj2")
 

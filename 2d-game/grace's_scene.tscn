@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://df6hxra2unncp"]
+[gd_scene load_steps=19 format=3 uid="uid://df6hxra2unncp"]
 
 [ext_resource type="Texture2D" uid="uid://c4l1atirwyd4p" path="res://grandmas-house.png" id="1_bvi55"]
 [ext_resource type="Script" uid="uid://b52le0f55kyga" path="res://character_body_2d.gd" id="2_2oqnh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://54dok0a5fpwh" path="res://WALK GUY copy/2 copy.png" id="4_2lnam"]
 [ext_resource type="Texture2D" uid="uid://ceivua6ekxx00" path="res://WALK GUY copy/2.png" id="5_f0oq2"]
 [ext_resource type="PackedScene" uid="uid://cjrdlskvwm7tf" path="res://Graces grandma.tscn" id="6_2oqnh"]
+[ext_resource type="Script" uid="uid://bqrb3kd1dgexv" path="res://microphone.gd" id="7_2lnam"]
 [ext_resource type="PackedScene" uid="uid://cprrdabrgjgdk" path="res://microphone.tscn" id="7_lq8rj"]
 [ext_resource type="Script" uid="uid://cjjg4dxrh1y1d" path="res://level_manager.gd" id="8_lq8rj"]
 
@@ -124,6 +125,7 @@ frame_progress = 0.7008626
 
 [node name="Camera2D2" type="Camera2D" parent="Main Character"]
 position = Vector2(423, 57)
+zoom = Vector2(0.65, 0.65)
 limit_left = 297
 limit_top = -284
 limit_right = 2790
@@ -131,19 +133,21 @@ limit_bottom = 1249
 
 [node name="FireRateTimer" type="Timer" parent="Main Character"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Main Character"]
-
-[node name="ProgressBar" type="ProgressBar" parent="Main Character/CanvasLayer"]
-offset_right = 4.0
-offset_bottom = 27.0
-
 [node name="Grandma" parent="." instance=ExtResource("6_2oqnh")]
 position = Vector2(2462, 551)
-shoot_interval = 3.0
+cookie_speed = 351.0
 
-[node name="Microphone" parent="." instance=ExtResource("7_lq8rj")]
+[node name="Microphone" type="Area2D" parent="."]
 position = Vector2(2664, 467)
 scale = Vector2(0.74375, 0.74375004)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("7_2lnam")
+
+[node name="Sprite2D" parent="Microphone" instance=ExtResource("7_lq8rj")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Microphone"]
+polygon = PackedVector2Array(-5.378174, 4.0336304, 28.235352, -201.68063, -100.84033, -193.61343, -106.218506, 37.647095, -38.9917, 76.63867, -43.025146, 215.12604, 21.512451, 220.50421, 49.747803, 26.890747, 83.36133, -51.092407, 36.30249, -216.47055)
 
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource("8_lq8rj")

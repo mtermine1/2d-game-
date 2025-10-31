@@ -71,6 +71,13 @@ position = Vector2(4154, 273)
 [node name="TeacherEnemy6" parent="." instance=ExtResource("3_be2y1")]
 position = Vector2(4698, 169)
 
+[node name="TeacherEnemy7" parent="." instance=ExtResource("3_be2y1")]
+position = Vector2(5256, 335)
+
+[node name="TeacherEnemy8" parent="." instance=ExtResource("3_be2y1")]
+position = Vector2(6399, 114.000015)
+scale = Vector2(1.9018917, 1.6300981)
+
 [node name="DrumSetToken2" parent="." instance=ExtResource("5_2yysk")]
 position = Vector2(6920, 416)
 

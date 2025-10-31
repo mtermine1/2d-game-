@@ -1,13 +1,12 @@
 extends Area2D
 
-signal level_completed
+@export var next_scene_path: String = "res://level2complete!.tscn"
 
-func _ready():
+func _ready() -> void:
 	connect("body_entered", Callable(self, "_on_body_entered"))
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		print("Level Complete! 🎵")
-		emit_signal("level_completed")
-		get_tree().change_scene_to_file("res://scenes/level_complete_screen.tscn")
+		print("🥁 Player touched the Drum Set! Loading next scene...")
+		get_tree().change_scene_to_file(next_scene_path)
 		queue_free()
