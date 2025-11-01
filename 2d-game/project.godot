@@ -15,6 +15,10 @@ run/main_scene="uid://d3k14t5cn4oof"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MusicManager="*res://MusicManager.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
