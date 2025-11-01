@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://vilfgtrb300s"]
+[gd_scene load_steps=8 format=3 uid="uid://vilfgtrb300s"]
 
 [ext_resource type="Texture2D" uid="uid://bnigbosbpwvxj" path="res://WALK GUY copy/2 copy 5.png" id="1_frhxo"]
 [ext_resource type="Texture2D" uid="uid://54dok0a5fpwh" path="res://WALK GUY copy/2 copy.png" id="2_6lxxo"]
 [ext_resource type="Script" uid="uid://doms26e6j522v" path="res://progress_bar.gd" id="2_33slx"]
 [ext_resource type="Texture2D" uid="uid://ceivua6ekxx00" path="res://WALK GUY copy/2.png" id="3_33slx"]
 [ext_resource type="Script" uid="uid://b52le0f55kyga" path="res://character_body_2d.gd" id="4_6lxxo"]
+[ext_resource type="AudioStream" uid="uid://dxqah7ktixajc" path="res://97229__mikey_eff__mfmetal_short_pwrchrd_dstr_a.wav" id="6_r5c5t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p73mb"]
 animations = [{
@@ -54,3 +55,6 @@ limit_bottom = 550
 
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_r5c5t")

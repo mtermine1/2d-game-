@@ -59,6 +59,11 @@ func shoot_bullet() -> void:
 	get_parent().add_child(new_bullet)
 	new_bullet.global_position = global_position
 
+	# 🎵 Play shooting sound
+	if shoot_sound:
+		shoot_sound.pitch_scale = randf_range(0.9, 1.1)  # adds some variation
+		shoot_sound.play()
+
 
 # ✅ Fire timer callback
 func _on_fire_rate_timeout() -> void:
@@ -80,6 +85,8 @@ func damage(amount: int) -> void:
 	if health <= 0:
 		print("Player died! Restarting level...")
 		get_tree().reload_current_scene()
+
+@onready var shoot_sound = $ShootSound
 
 
 func _on_grandma_area_entered(area: Area2D) -> void:
