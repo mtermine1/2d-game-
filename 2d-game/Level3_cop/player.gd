@@ -26,6 +26,10 @@ func _physics_process(delta: float) -> void:
 		var newbullet = Bullet.instantiate()
 		get_parent().add_child(newbullet)
 		newbullet.global_position = global_position
+	
+	if shoot_sound:
+		shoot_sound.pitch_scale = randf_range(0.9, 1.1)  # adds some variation
+		shoot_sound.play()
 
 	# Jump
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -60,3 +64,5 @@ func damage(amount: int) -> void:
 
 	if health == 0:
 		get_tree().reload_current_scene()
+		
+@onready var shoot_sound = $ShootSound
